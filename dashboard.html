@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHE SHIELD - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+</head>
+<body>
+    <div class="container dashboard">
+        <!-- Header -->
+        <header class="header dashboard-header">
+            <div class="logo small">
+                <div class="shield-icon">🛡️</div>
+                <h1>SHE SHIELD</h1>
+            </div>
+            <div class="user-info">
+                <span id="user-email"></span>
+                <button id="logout-btn" class="btn btn-outline">Logout</button>
+            </div>
+        </header>
+
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <h2>Hello, <span id="user-name">User</span>!</h2>
+            <p>You're protected. Stay safe always.</p>
+        </section>
+
+        <!-- SOS Section - Most Important -->
+        <section class="sos-section">
+            <button id="sos-btn" class="sos-button">
+                <span class="sos-icon">🆘</span>
+                <span class="sos-text">SOS</span>
+                <span class="sos-subtext">Tap in Emergency</span>
+            </button>
+            
+            <div id="sos-status" class="sos-status hidden">
+                <div class="status-content">
+                    <div class="status-icon">✓</div>
+                    <p class="status-message">SOS Alert Sent Successfully!</p>
+                    <p class="status-info">Your emergency contacts have been notified.</p>
+                    <a id="map-link" href="#" target="_blank" class="btn btn-secondary">
+                        📍 View Location on Map
+                    </a>
+                </div>
+            </div>
+            
+            <div id="sos-error" class="error-message"></div>
+        </section>
+
+        <!-- Emergency Contacts Section -->
+        <section class="contacts-section">
+            <div class="section-header">
+                <h3>Emergency Contacts</h3>
+                <p>Add trusted people who will receive your SOS alerts</p>
+            </div>
+
+            <!-- Add Contact Form -->
+            <form id="contact-form" class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contact-name">Name</label>
+                        <input type="text" id="contact-name" placeholder="Contact name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-phone">Phone Number</label>
+                        <input type="tel" id="contact-phone" placeholder="+91 9876543210" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">+ Add Contact</button>
+            </form>
+
+            <div id="contact-error" class="error-message"></div>
+
+            <!-- Contacts List -->
+            <div class="contacts-list">
+                <h4>Saved Contacts</h4>
+                <div id="contacts-container">
+                    <p class="no-contacts">No contacts added yet. Add your emergency contacts above.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Alerts Section -->
+        <section class="alerts-section">
+            <div class="section-header">
+                <h3>Recent SOS Alerts</h3>
+            </div>
+            <div id="alerts-container">
+                <p class="no-alerts">No SOS alerts sent yet.</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="safety-tip">💡 Safety Tip: Keep your phone charged and GPS enabled</p>
+            <p class="copyright">© 2024 SHE SHIELD</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
