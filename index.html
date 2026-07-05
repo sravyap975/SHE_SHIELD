@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHE SHIELD - Women Safety App</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header with logo -->
+        <header class="header">
+            <div class="logo">
+                <div class="shield-icon">🛡️</div>
+                <h1>SHE SHIELD</h1>
+            </div>
+            <p class="tagline">Your Safety, One Tap Away</p>
+        </header>
+
+        <!-- Auth Container -->
+        <div class="auth-container">
+            <!-- Login Form -->
+            <div id="login-form" class="auth-form">
+                <h2>Welcome Back</h2>
+                <p class="form-subtitle">Login to access your safety dashboard</p>
+                
+                <div class="form-group">
+                    <label for="login-email">Email Address</label>
+                    <input type="email" id="login-email" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Enter your password" required>
+                </div>
+                
+                <div id="login-error" class="error-message"></div>
+                
+                <button id="login-btn" class="btn btn-primary">Login</button>
+                
+                <p class="switch-form">
+                    Don't have an account? 
+                    <a href="#" id="show-signup">Sign Up</a>
+                </p>
+            </div>
+
+            <!-- Signup Form -->
+            <div id="signup-form" class="auth-form hidden">
+                <h2>Create Account</h2>
+                <p class="form-subtitle">Join SHE SHIELD for your safety</p>
+                
+                <div class="form-group">
+                    <label for="signup-email">Email Address</label>
+                    <input type="email" id="signup-email" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" placeholder="Create a password (min 6 characters)" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signup-confirm">Confirm Password</label>
+                    <input type="password" id="signup-confirm" placeholder="Confirm your password" required>
+                </div>
+                
+                <div id="signup-error" class="error-message"></div>
+                
+                <button id="signup-btn" class="btn btn-primary">Create Account</button>
+                
+                <p class="switch-form">
+                    Already have an account? 
+                    <a href="#" id="show-login">Login</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with ❤️ for Women Safety</p>
+            <p class="copyright">© 2026 SHE SHIELD</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
